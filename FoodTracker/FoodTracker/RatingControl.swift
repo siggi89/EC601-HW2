@@ -25,10 +25,19 @@ class RatingControl: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
+        let filledStarImage = UIImage(named: "filledStar")
+        let emptyStarImage = UIImage(named: "emptyStar")
+        
         for _ in 0..<starCount {
             let button = UIButton()
-            button.backgroundColor = UIColor.red
-            button.addTarget(self, action: "ratingButtonTapped:", for: .touchDown)
+            
+            button.setImage(emptyStarImage, for: .normal)
+            button.setImage(filledStarImage, for: .selected)
+            button.setImage(filledStarImage, for: [.highlighted, .selected])
+            
+            button.adjustsImageWhenHighlighted = false
+            
+            button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(_:)), for: .touchDown)
             ratingButtons += [button]
             addSubview(button)
         }
@@ -44,17 +53,28 @@ class RatingControl: UIView {
             buttonFrame.origin.x = CGFloat(index * (buttonSize + spacing))
             button.frame = buttonFrame
         }
+        updateButtonSelectionStates()
     }
     
-    override func intrinsicContentSize() -> CGSize {
+    override var intrinsicContentSize : CGSize {
         let buttonSize = Int(frame.size.height)
-        let width = (buttonSize * starCount) + (spacing * (starCount - 1))
+        let width = (buttonSize + spacing) * starCount
         
         return CGSize(width: width, height: buttonSize)
     }
     
     // MARK: Button Action
-    func ratingButtonTapped(button: UIButton) {
-        print("Button pressed 👍")
+    
+    func ratingButtonTapped(_ button: UIButton) {
+        rating = ratingButtons.index(of: button)! + 1
+        
+        updateButtonSelectionStates()
+    }
+
+    func updateButtonSelectionStates() {
+        for (index, button) in ratingButtons.enumerated() {
+            //If the index of a button is less than the rating, that button should be selected
+            button.isSelected = index < rating
+        }
     }
 }
