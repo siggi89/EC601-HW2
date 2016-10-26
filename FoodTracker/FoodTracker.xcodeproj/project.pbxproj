@@ -14,6 +14,10 @@
 		88E3FA7A1DA05509003968FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88E3FA781DA05509003968FD /* LaunchScreen.storyboard */; };
 		88E3FA851DA05509003968FD /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3FA841DA05509003968FD /* FoodTrackerTests.swift */; };
 		88E3FA901DA1A5D3003968FD /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E3FA8F1DA1A5D3003968FD /* RatingControl.swift */; };
+		88FAC94C1DC049F200FA7441 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FAC94B1DC049F200FA7441 /* Meal.swift */; };
+		88FAC94D1DC049F200FA7441 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FAC94B1DC049F200FA7441 /* Meal.swift */; };
+		88FAC94F1DC06DB500FA7441 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FAC94E1DC06DB500FA7441 /* MealTableViewCell.swift */; };
+		88FAC9511DC0790F00FA7441 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FAC9501DC0790F00FA7441 /* MealTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,9 @@
 		88E3FA841DA05509003968FD /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
 		88E3FA861DA05509003968FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88E3FA8F1DA1A5D3003968FD /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		88FAC94B1DC049F200FA7441 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Meal.swift; path = ../Meal.swift; sourceTree = "<group>"; };
+		88FAC94E1DC06DB500FA7441 /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		88FAC9501DC0790F00FA7441 /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +89,10 @@
 				88E3FA6F1DA05509003968FD /* AppDelegate.swift */,
 				88E3FA711DA05509003968FD /* ViewController.swift */,
 				88E3FA8F1DA1A5D3003968FD /* RatingControl.swift */,
+				88FAC94B1DC049F200FA7441 /* Meal.swift */,
 				88E3FA731DA05509003968FD /* Main.storyboard */,
+				88FAC9501DC0790F00FA7441 /* MealTableViewController.swift */,
+				88FAC94E1DC06DB500FA7441 /* MealTableViewCell.swift */,
 				88E3FA761DA05509003968FD /* Assets.xcassets */,
 				88E3FA781DA05509003968FD /* LaunchScreen.storyboard */,
 				88E3FA7B1DA05509003968FD /* Info.plist */,
@@ -202,9 +212,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88FAC94C1DC049F200FA7441 /* Meal.swift in Sources */,
 				88E3FA721DA05509003968FD /* ViewController.swift in Sources */,
 				88E3FA901DA1A5D3003968FD /* RatingControl.swift in Sources */,
 				88E3FA701DA05509003968FD /* AppDelegate.swift in Sources */,
+				88FAC9511DC0790F00FA7441 /* MealTableViewController.swift in Sources */,
+				88FAC94F1DC06DB500FA7441 /* MealTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88FAC94D1DC049F200FA7441 /* Meal.swift in Sources */,
 				88E3FA851DA05509003968FD /* FoodTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +424,7 @@
 				88E3FA8B1DA05509003968FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88E3FA8C1DA05509003968FD /* Build configuration list for PBXNativeTarget "FoodTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +433,7 @@
 				88E3FA8E1DA05509003968FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
