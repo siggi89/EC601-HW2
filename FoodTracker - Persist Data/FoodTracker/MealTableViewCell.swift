@@ -5,7 +5,6 @@
 //  Created by Sigurdur Thorvaldsson on 26/10/2016.
 //  Copyright © 2016 Sigurdur Thorvaldsson. All rights reserved.
 //
-
 import UIKit
 
 class MealTableViewCell: UITableViewCell {
@@ -20,7 +19,7 @@ class MealTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
