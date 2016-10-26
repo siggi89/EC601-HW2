@@ -2,7 +2,7 @@
 //  RatingControl.swift
 //  FoodTracker
 //
-//  Created by Sigurdur Thorvaldsson on 02/10/16.
+//  Created by Sigurdur Thorvaldsson on 26/10/2016.
 //  Copyright © 2016 Sigurdur Thorvaldsson. All rights reserved.
 //
 
@@ -17,21 +17,21 @@ class RatingControl: UIView {
         }
     }
     var ratingButtons = [UIButton]()
-    let spacing = 5
-    let starCount = 5
-    
+    var spacing: Int = 5
+    var stars: Int = 5
+
     // MARK: Initialization
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         let filledStarImage = UIImage(named: "filledStar")
         let emptyStarImage = UIImage(named: "emptyStar")
         
-        for _ in 0..<starCount {
+        for _ in 0..<5 {
             let button = UIButton()
-            
-            button.setImage(emptyStarImage, for: .normal)
+
+            button.setImage(emptyStarImage, for: UIControlState())
             button.setImage(filledStarImage, for: .selected)
             button.setImage(filledStarImage, for: [.highlighted, .selected])
             
@@ -48,7 +48,7 @@ class RatingControl: UIView {
         let buttonSize = Int(frame.size.height)
         var buttonFrame = CGRect(x: 0, y: 0, width: buttonSize, height: buttonSize)
         
-        // Offset each button's origin by the lenght of the button plus spacing.
+        // Offset each button's origin by the length of the button plus spacing.
         for (index, button) in ratingButtons.enumerated() {
             buttonFrame.origin.x = CGFloat(index * (buttonSize + spacing))
             button.frame = buttonFrame
@@ -58,7 +58,7 @@ class RatingControl: UIView {
     
     override var intrinsicContentSize : CGSize {
         let buttonSize = Int(frame.size.height)
-        let width = (buttonSize + spacing) * starCount
+        let width = (buttonSize + spacing) * stars
         
         return CGSize(width: width, height: buttonSize)
     }
@@ -70,10 +70,10 @@ class RatingControl: UIView {
         
         updateButtonSelectionStates()
     }
-
+    
     func updateButtonSelectionStates() {
         for (index, button) in ratingButtons.enumerated() {
-            //If the index of a button is less than the rating, that button should be selected
+            // If the index of a button is less than the rating, that button should be selected.
             button.isSelected = index < rating
         }
     }

@@ -1,19 +1,19 @@
 //
-//  ViewController.swift
+//  MealViewController.swift
 //  FoodTracker
 //
-//  Created by Sigurdur Thorvaldsson on 01/10/16.
+//  Created by Sigurdur Thorvaldsson on 26/10/2016.
 //  Copyright © 2016 Sigurdur Thorvaldsson. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    
+class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // MARK: Properties
+    
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     // MARK: UITextFieldDelegate
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
         textField.resignFirstResponder()
@@ -30,14 +31,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        mealNameLabel.text = textField.text
+
     }
     
     // MARK: UIImagePickerControllerDelegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // Dismiss the picker if the user canceled.
         dismiss(animated: true, completion: nil)
-    }   
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // The info dictionary contains multiple representations of the image, and this uses the original.
@@ -52,7 +53,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     // MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-        
         // Hide the keyboard.
         nameTextField.resignFirstResponder()
         
@@ -67,12 +67,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         present(imagePickerController, animated: true, completion: nil)
     }
-    
-    @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        
-        mealNameLabel.text = "Default Text"
-        
-    }
-    
+
 }
 
